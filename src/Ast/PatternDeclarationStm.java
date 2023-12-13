@@ -1,3 +1,5 @@
+package ast;
+
 public class PatternDeclarationStm implements ASTNode {
     private ASTNode pat;
     private ASTNode rhs;

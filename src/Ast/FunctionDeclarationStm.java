@@ -1,3 +1,5 @@
+package ast;
+
 public class FunctionDeclarationStm implements ASTNode {
     private ASTNode funlhs;
     private ASTNode rhs;

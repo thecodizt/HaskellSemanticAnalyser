@@ -1,3 +1,5 @@
+package ast;
+
 public class GeneralDeclaration implements ASTNode {
     private String ID;
     private ASTNode types;

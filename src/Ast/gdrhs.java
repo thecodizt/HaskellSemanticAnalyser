@@ -1,3 +1,5 @@
+package ast;
+
 public abstract class gdrhs implements ASTNode{
 
 	@Override

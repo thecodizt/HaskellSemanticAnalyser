@@ -1,3 +1,5 @@
+package ast;
+
 public abstract class args implements ASTNode{
 
 	@Override

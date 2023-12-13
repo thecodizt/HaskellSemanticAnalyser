@@ -1,3 +1,5 @@
+package ast;
+
 public class FunLhsClass implements ASTNode {
     private String ID;
     private ASTNode pats;

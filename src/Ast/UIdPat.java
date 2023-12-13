@@ -1,3 +1,5 @@
+package ast;
+
 public class UIdPat implements ASTNode {
     private String ID;
 

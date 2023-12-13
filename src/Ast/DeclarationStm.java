@@ -1,3 +1,5 @@
+package ast;
+
 public class DeclarationStm implements ASTNode {
     private ASTNode declaration;
 

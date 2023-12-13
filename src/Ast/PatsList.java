@@ -1,3 +1,5 @@
+package ast;
+
 public class PatsList implements ASTNode {
     private ASTNode pat;
     private ASTNode pats;

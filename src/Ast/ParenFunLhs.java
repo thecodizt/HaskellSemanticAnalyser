@@ -1,4 +1,4 @@
-ParenFunLhs
+package ast;
 
 public class ParenFunLhs implements ASTNode {
     private String ID;

@@ -1,3 +1,5 @@
+package ast;
+
 public class SinglePat implements ASTNode {
     private ASTNode pat;
 

@@ -1,3 +1,5 @@
+package ast;
+
 public abstract class if_statement implements ASTNode{
 
 	@Override

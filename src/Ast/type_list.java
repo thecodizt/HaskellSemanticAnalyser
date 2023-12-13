@@ -1,3 +1,5 @@
+package ast;
+
 public abstract class type_list implements ASTNode{
 
 	@Override

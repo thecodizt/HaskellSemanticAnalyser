@@ -1,3 +1,5 @@
+package ast;
+
 public abstract class case_alternatives implements ASTNode{
 
 	@Override

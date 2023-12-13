@@ -1,3 +1,5 @@
+package ast;
+
 public class IdPat implements ASTNode {
     private String ID;
 

@@ -1,3 +1,5 @@
+package ast;
+
 public abstract class gendeclaration implements ASTNode{
 
 	@Override

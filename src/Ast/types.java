@@ -1,3 +1,5 @@
+package ast;
+
 public abstract class types implements ASTNode{
 
 	@Override
