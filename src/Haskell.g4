@@ -31,7 +31,7 @@ pats
 
 funlhs
 	returns[ASTNode node]:
-	ID pats {$node = new FunLhs($ID.text, $pats.node);}
+	ID pats {$node = new FunLhsClass($ID.text, $pats.node);}
 	| ID LPAREN pats RPAREN {$node = new ParenFunLhs($ID.text, $pats.node);};
 
 rhs
