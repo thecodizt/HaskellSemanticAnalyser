@@ -13,7 +13,7 @@ public class ParenFunLhs implements ASTNode {
     public void print() {
         System.out.println("Paren Function LHS: ");
         System.out.print(ID);
-        System.out.println("Patterns: ");
+        System.out.println("Parameters: ");
         pats.print();
     }
 }

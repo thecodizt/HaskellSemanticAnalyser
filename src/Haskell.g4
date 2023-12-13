@@ -52,24 +52,20 @@ expression
 	| literal {$node = $literal.node;}
 	| function_application {$node = new FunctionApplicationExpression($function_application.node);}
 	| list_comprehensions {$node = new ListComprehensionExpression($list_comprehensions.node);}
-	| expression op expression {$node = new OpExpression($expression.node, $op.value, $expression.node);
-		}
+	| expression op expression {$node = new OpExpression($expression[0].node, $op.value, $expression[1].node);}
 	| MINUS expression {$node = new MinusExpression($expression.node);};
 
 if_statement
 	returns[ASTNode node]:
-	IF expression THEN expression ELSE expression {$node = new IfStatement($expression[0].node, $expression[1].node, $expression[2].node);
-		};
+	IF expression THEN expression ELSE expression {$node = new IfStatement($expression[0].node, $expression[1].node, $expression[2].node);};
 
 case_statement
 	returns[ASTNode node]:
-	CASE expression OF case_alternatives {$node = new CaseStatement($expression.node, $case_alternatives.node);
-		};
+	CASE expression OF case_alternatives {$node = new CaseStatement($expression.node, $case_alternatives.node);};
 
 case_alternatives
 	returns[ASTNode node]:
-	case_alternative case_alternatives {$node = new CaseAlternativesList($case_alternative.node, $case_alternatives.node);
-		}
+	case_alternative case_alternatives {$node = new CaseAlternativesList($case_alternative.node, $case_alternatives.node);}
 	| case_alternative {$node = new SingleCaseAlternative($case_alternative.node);};
 
 case_alternative
@@ -90,8 +86,7 @@ stmt
 	expression {$node = new ExpressionStmt($expression.node);}
 	| pat ARROW expression {$node = new PatArrowExpressionStmt($pat.node, $expression.node);}
 	| pat ASSIGN expression {$node = new PatAssignExpressionStmt($pat.node, $expression.node);}
-	| pat ASSIGN expression DOUBLE_COLON types {$node = new PatAssignTypedExpressionStmt($pat.node, $expression.node, $types.node);
-		}
+	| pat ASSIGN expression DOUBLE_COLON types {$node = new PatAssignTypedExpressionStmt($pat.node, $expression.node, $types.node);}
 	| LET declarations {$node = new LetStmt($declarations.node);};
 
 gdrhs
@@ -105,8 +100,7 @@ gd
 
 exp1
 	returns[ASTNode node]:
-	expression DOUBLE_COLON DOUBLEARROW type {$node = new Exp1TypedExpression($expression.node, $type.node);
-		}
+	expression DOUBLE_COLON DOUBLEARROW type {$node = new Exp1TypedExpression($expression.node, $type.node);}
 	| expression {$node = new Exp1Expression($expression.node);};
 
 types
@@ -130,8 +124,7 @@ atype
 
 let_statement
 	returns[ASTNode node]:
-	LET declarations IN expression {$node = new LetStatement($declarations.node, $expression.node);}
-		;
+	LET declarations IN expression {$node = new LetStatement($declarations.node, $expression.node);};
 
 function_application
 	returns[ASTNode node]:
