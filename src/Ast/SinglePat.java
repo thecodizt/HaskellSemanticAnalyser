@@ -9,7 +9,7 @@ public class SinglePat implements ASTNode {
 
     @Override
     public void print() {
-        System.out.println("Identifier Pattern: ");
+        System.out.println("Statement: ");
         pat.print();
     }
 }
