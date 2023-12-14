@@ -4,6 +4,7 @@ public class ParenExpsList implements ASTNode {
     private ASTNode lc;
 
     public ParenExpsList(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

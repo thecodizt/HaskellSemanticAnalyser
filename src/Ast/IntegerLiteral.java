@@ -1,9 +1,10 @@
 package ast;
 
 public class IntegerLiteral implements ASTNode {
-    private String lc;
+    private int lc;
 
-    public IntegerLiteral(String lc) {
+    public IntegerLiteral(int lc) {
+        super();
         this.lc = lc;
     }
 

@@ -3,7 +3,8 @@ package ast;
 public class ExpressionStmt implements ASTNode {
     private ASTNode exp;
 
-    public SinglePat(ASTNode exp) {
+    public ExpressionStmt(ASTNode exp) {
+        super();
         this.exp = exp;
     }
 

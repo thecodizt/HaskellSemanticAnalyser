@@ -4,6 +4,7 @@ public class CaseExpression implements ASTNode {
     private ASTNode lc;
 
     public CaseExpression(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

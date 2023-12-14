@@ -1,4 +1,7 @@
 // Generated from Haskell.g4 by ANTLR 4.10.1
+
+    import ast.*;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,35 +10,35 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface HaskellListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link HaskellParser#declarations}.
+	 * Enter a parse tree produced by {@link HaskellParser#start}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclarations(HaskellParser.DeclarationsContext ctx);
+	void enterStart(HaskellParser.StartContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HaskellParser#declarations}.
+	 * Exit a parse tree produced by {@link HaskellParser#start}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclarations(HaskellParser.DeclarationsContext ctx);
+	void exitStart(HaskellParser.StartContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HaskellParser#decl}.
+	 * Enter a parse tree produced by {@link HaskellParser#declaration}.
 	 * @param ctx the parse tree
 	 */
-	void enterDecl(HaskellParser.DeclContext ctx);
+	void enterDeclaration(HaskellParser.DeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HaskellParser#decl}.
+	 * Exit a parse tree produced by {@link HaskellParser#declaration}.
 	 * @param ctx the parse tree
 	 */
-	void exitDecl(HaskellParser.DeclContext ctx);
+	void exitDeclaration(HaskellParser.DeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HaskellParser#gendecl}.
+	 * Enter a parse tree produced by {@link HaskellParser#gendeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void enterGendecl(HaskellParser.GendeclContext ctx);
+	void enterGendeclaration(HaskellParser.GendeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HaskellParser#gendecl}.
+	 * Exit a parse tree produced by {@link HaskellParser#gendeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void exitGendecl(HaskellParser.GendeclContext ctx);
+	void exitGendeclaration(HaskellParser.GendeclarationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link HaskellParser#pat}.
 	 * @param ctx the parse tree
@@ -56,16 +59,6 @@ public interface HaskellListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPats(HaskellParser.PatsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link HaskellParser#qvcon}.
-	 * @param ctx the parse tree
-	 */
-	void enterQvcon(HaskellParser.QvconContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link HaskellParser#qvcon}.
-	 * @param ctx the parse tree
-	 */
-	void exitQvcon(HaskellParser.QvconContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link HaskellParser#funlhs}.
 	 * @param ctx the parse tree
@@ -326,4 +319,44 @@ public interface HaskellListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExps(HaskellParser.ExpsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link HaskellParser#declarations}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclarations(HaskellParser.DeclarationsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link HaskellParser#declarations}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclarations(HaskellParser.DeclarationsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link HaskellParser#decl}.
+	 * @param ctx the parse tree
+	 */
+	void enterDecl(HaskellParser.DeclContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link HaskellParser#decl}.
+	 * @param ctx the parse tree
+	 */
+	void exitDecl(HaskellParser.DeclContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link HaskellParser#gendecl}.
+	 * @param ctx the parse tree
+	 */
+	void enterGendecl(HaskellParser.GendeclContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link HaskellParser#gendecl}.
+	 * @param ctx the parse tree
+	 */
+	void exitGendecl(HaskellParser.GendeclContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link HaskellParser#qvcon}.
+	 * @param ctx the parse tree
+	 */
+	void enterQvcon(HaskellParser.QvconContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link HaskellParser#qvcon}.
+	 * @param ctx the parse tree
+	 */
+	void exitQvcon(HaskellParser.QvconContext ctx);
 }

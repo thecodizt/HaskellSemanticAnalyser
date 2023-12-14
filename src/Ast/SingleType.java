@@ -4,6 +4,7 @@ public class SingleType implements ASTNode {
     private ASTNode lc;
 
     public SingleType(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

@@ -4,6 +4,7 @@ public class FunctionApplicationArg implements ASTNode {
     private ASTNode lc;
 
     public FunctionApplicationArg(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

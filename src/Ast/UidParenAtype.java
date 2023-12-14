@@ -4,6 +4,7 @@ public class UidParenAtype implements ASTNode {
     private String lc;
 
     public UidParenAtype(String lc) {
+        super();
         this.lc = lc;
     }
 

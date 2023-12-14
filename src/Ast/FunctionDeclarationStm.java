@@ -1,10 +1,11 @@
 package ast;
 
-public class FunctionDeclarationStm implements ASTNode {
+public class FunctionDeclarationStm extends declaration implements ASTNode {
     private ASTNode funlhs;
     private ASTNode rhs;
 
     public FunctionDeclarationStm(ASTNode funlhs, ASTNode rhs) {
+        super();
         this.funlhs = funlhs;
         this.rhs = rhs;
     }
@@ -13,8 +14,12 @@ public class FunctionDeclarationStm implements ASTNode {
     public void print() {
         System.out.println("Function Declaration Node:");
         System.out.print("Function name: ");
-        funlhs.print();
+        if (funlhs != null) {
+        	funlhs.print();
+        }
         System.out.println("Definition:");
-        rhs.print();
+        if (rhs != null) {
+        	rhs.print();
+        }
     }
 }

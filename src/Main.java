@@ -46,8 +46,9 @@ public class Main {
         }
 
         symbolTable.displayTable(); // Display the symbol table
-
+        
+        System.out.println("PARSE TREE: \n\n");
         // Start parsing from the stored token stream
-//        parser.start();
+        parser.start();
     }
 }

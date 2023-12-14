@@ -4,6 +4,7 @@ public class DoBlockExpression implements ASTNode {
     private ASTNode lc;
 
     public DoBlockExpression(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

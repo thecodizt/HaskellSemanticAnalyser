@@ -4,6 +4,7 @@ public class StringLiteral implements ASTNode {
     private String lc;
 
     public StringLiteral(String lc) {
+        super();
         this.lc = lc;
     }
 

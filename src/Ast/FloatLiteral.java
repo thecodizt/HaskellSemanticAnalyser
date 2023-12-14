@@ -1,9 +1,10 @@
 package ast;
 
 public class FloatLiteral implements ASTNode {
-    private String lc;
+    private float lc;
 
-    public FloatLiteral(String lc) {
+    public FloatLiteral(float lc) {
+        super();
         this.lc = lc;
     }
 

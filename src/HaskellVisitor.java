@@ -1,4 +1,7 @@
 // Generated from Haskell.g4 by ANTLR 4.10.1
+
+    import ast.*;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -10,23 +13,23 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface HaskellVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link HaskellParser#declarations}.
+	 * Visit a parse tree produced by {@link HaskellParser#start}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDeclarations(HaskellParser.DeclarationsContext ctx);
+	T visitStart(HaskellParser.StartContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link HaskellParser#decl}.
+	 * Visit a parse tree produced by {@link HaskellParser#declaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDecl(HaskellParser.DeclContext ctx);
+	T visitDeclaration(HaskellParser.DeclarationContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link HaskellParser#gendecl}.
+	 * Visit a parse tree produced by {@link HaskellParser#gendeclaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitGendecl(HaskellParser.GendeclContext ctx);
+	T visitGendeclaration(HaskellParser.GendeclarationContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link HaskellParser#pat}.
 	 * @param ctx the parse tree
@@ -39,12 +42,6 @@ public interface HaskellVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPats(HaskellParser.PatsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link HaskellParser#qvcon}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitQvcon(HaskellParser.QvconContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link HaskellParser#funlhs}.
 	 * @param ctx the parse tree
@@ -201,4 +198,28 @@ public interface HaskellVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExps(HaskellParser.ExpsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HaskellParser#declarations}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclarations(HaskellParser.DeclarationsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HaskellParser#decl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDecl(HaskellParser.DeclContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HaskellParser#gendecl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGendecl(HaskellParser.GendeclContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HaskellParser#qvcon}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitQvcon(HaskellParser.QvconContext ctx);
 }

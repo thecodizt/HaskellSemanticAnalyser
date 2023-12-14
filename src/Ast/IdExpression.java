@@ -4,6 +4,7 @@ public class IdExpression implements ASTNode {
     private String lc;
 
     public IdExpression(String lc) {
+        super();
         this.lc = lc;
     }
 

@@ -4,6 +4,7 @@ public class CharLiteral implements ASTNode {
     private String lc;
 
     public CharLiteral(String lc) {
+        super();
         this.lc = lc;
     }
 

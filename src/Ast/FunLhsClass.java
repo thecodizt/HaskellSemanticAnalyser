@@ -5,6 +5,7 @@ public class FunLhsClass implements ASTNode {
     private ASTNode pats;
 
     public FunLhsClass(String ID, ASTNode pats) {
+        super();
         this.ID = ID;
         this.pats = pats;
     }

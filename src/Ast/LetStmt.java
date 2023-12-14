@@ -4,6 +4,7 @@ public class LetStmt implements ASTNode {
     private ASTNode exp;
 
     public LetStmt(ASTNode exp) {
+        super();
         this.exp = exp;
     }
 

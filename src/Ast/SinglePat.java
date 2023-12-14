@@ -4,6 +4,7 @@ public class SinglePat implements ASTNode {
     private ASTNode pat;
 
     public SinglePat(ASTNode pat) {
+        super();
         this.pat = pat;
     }
 

@@ -4,6 +4,7 @@ public class ArrowRhs implements ASTNode {
     private ASTNode lc;
 
     public ArrowRhs(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

@@ -5,6 +5,7 @@ public class TypeList implements ASTNode {
     private ASTNode a;
 
     public TypeList(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }

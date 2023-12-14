@@ -4,6 +4,7 @@ public class MinusExpression implements ASTNode {
     private ASTNode l;
 
     public MinusExpression(ASTNode l) {
+        super();
         this.l = l;
     }
 

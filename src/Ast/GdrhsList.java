@@ -6,6 +6,7 @@ public class GdrhsList implements ASTNode {
     private ASTNode c;
 
     public GdrhsList(ASTNode a, ASTNode b,ASTNode c) {
+        super();
         this.a = a;
         this.b = b;
         this.c = c;

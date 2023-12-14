@@ -1,10 +1,11 @@
 package ast;
 
-public class IfStatement implements ASTNode {
+public class CaseAlternativesList implements ASTNode {
     private ASTNode c;
     private ASTNode a;
 
-    public IfStatement(ASTNode c, ASTNode a) {
+    public CaseAlternativesList(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }

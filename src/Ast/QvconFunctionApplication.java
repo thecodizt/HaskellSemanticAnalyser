@@ -5,6 +5,7 @@ public class QvconFunctionApplication implements ASTNode {
     private ASTNode a;
 
     public QvconFunctionApplication(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }

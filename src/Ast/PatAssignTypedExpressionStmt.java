@@ -6,6 +6,7 @@ public class PatAssignTypedExpressionStmt implements ASTNode {
     private ASTNode c;
 
     public PatAssignTypedExpressionStmt(ASTNode a, ASTNode b,ASTNode c) {
+        super();
         this.a = a;
         this.b = b;
         this.c = c;

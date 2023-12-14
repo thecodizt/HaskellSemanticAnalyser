@@ -4,6 +4,7 @@ public class UidAtype implements ASTNode {
     private String lc;
 
     public UidAtype(String lc) {
+        super();
         this.lc = lc;
     }
 

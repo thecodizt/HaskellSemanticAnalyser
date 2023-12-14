@@ -5,6 +5,7 @@ public class GeneralDeclaration implements ASTNode {
     private ASTNode types;
 
     public GeneralDeclaration(String ID, ASTNode types) {
+        super();
         this.ID = ID;
         this.types = types;
     }

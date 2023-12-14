@@ -6,6 +6,7 @@ public class IfStatement implements ASTNode {
     private ASTNode n;
 
     public IfStatement(ASTNode e, ASTNode y, ASTNode n) {
+        super();
         this.e = e;
         this.y = y;
         this.n = n;

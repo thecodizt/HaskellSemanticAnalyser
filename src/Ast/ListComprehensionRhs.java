@@ -4,6 +4,7 @@ public class ListComprehensionRhs implements ASTNode {
     private ASTNode lc;
 
     public ListComprehensionRhs(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

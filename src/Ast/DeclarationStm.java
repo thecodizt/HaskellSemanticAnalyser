@@ -1,9 +1,10 @@
 package ast;
 
-public class DeclarationStm implements ASTNode {
+public class DeclarationStm extends declaration implements ASTNode {
     private ASTNode declaration;
 
     public DeclarationStm(ASTNode declaration) {
+        super();
         this.declaration = declaration;
     }
 

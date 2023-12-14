@@ -4,6 +4,7 @@ public class SingleArg implements ASTNode {
     private ASTNode lc;
 
     public SingleArg(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

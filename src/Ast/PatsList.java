@@ -5,6 +5,7 @@ public class PatsList implements ASTNode {
     private ASTNode pats;
 
     public PatsList(ASTNode pat, ASTNode pats) {
+        super();
         this.pat = pat;
         this.pats = pats;
     }

@@ -4,6 +4,7 @@ public class BracketExpsList implements ASTNode {
     private ASTNode lc;
 
     public BracketExpsList(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

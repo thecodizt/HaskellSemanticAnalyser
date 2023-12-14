@@ -4,6 +4,7 @@ public class BooleanLiteral implements ASTNode {
     private Boolean lc;
 
     public BooleanLiteral(Boolean lc) {
+        super();
         this.lc = lc;
     }
 

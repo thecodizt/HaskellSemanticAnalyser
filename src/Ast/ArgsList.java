@@ -5,6 +5,7 @@ public class ArgsList implements ASTNode {
     private ASTNode a;
 
     public ArgsList(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }

@@ -5,6 +5,7 @@ public class ParenFunLhs implements ASTNode {
     private ASTNode pats;
 
     public ParenFunLhs(String ID, ASTNode pats) {
+        super();
         this.ID = ID;
         this.pats = pats;
     }

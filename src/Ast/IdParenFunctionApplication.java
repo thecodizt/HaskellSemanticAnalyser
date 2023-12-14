@@ -5,6 +5,7 @@ public class IdParenFunctionApplication implements ASTNode {
     private ASTNode pats;
 
     public IdParenFunctionApplication(String ID, ASTNode pats) {
+        super();
         this.ID = ID;
         this.pats = pats;
     }

@@ -4,6 +4,7 @@ public class AtypeType implements ASTNode {
     private ASTNode lc;
 
     public AtypeType(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

@@ -6,6 +6,7 @@ public class OpExpression implements ASTNode {
     private String op;
 
     public OpExpression(ASTNode l, String op, ASTNode r) {
+        super();
         this.l = l;
         this.r = r;
         this.op = op;

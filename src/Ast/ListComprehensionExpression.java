@@ -4,6 +4,7 @@ public class ListComprehensionExpression implements ASTNode {
     private ASTNode lc;
 
     public ListComprehensionExpression(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

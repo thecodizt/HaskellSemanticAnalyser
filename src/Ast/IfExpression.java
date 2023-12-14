@@ -4,6 +4,7 @@ public class IfExpression implements ASTNode {
     private ASTNode lc;
 
     public IfExpression(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

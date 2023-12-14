@@ -1,29 +1,4 @@
--- Binary search implementation
-binarySearch :: (Ord a) => [a] -> a -> Bool
-binarySearch [] _ = False
-binarySearch [x] target = x == target
-binarySearch xs target
-    | target < midElement = binarySearch leftSublist target
-    | target > midElement = binarySearch rightSublist target
-    | otherwise = True
-    where
-        midIndex = length xs `div` 2
-        leftSublist = take midIndex xs
-        rightSublist = drop (midIndex + 1) xs
-
--- Helper function to print the search result
-printSearchResult :: Bool -> IO ()
-printSearchResult True = putStrLn "Element found in the list."
-printSearchResult False = putStrLn "Element not found in the list."
-
-main :: IO ()
 main = do
-    let sortedList = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-    putStrLn "Sorted List:"
-
-    putStrLn "Enter the element you want to search for:"
-    input <- getLine
-    let elementToSearch = read input :: Int
-
-    let result = binarySearch sortedList elementToSearch
-    printSearchResult result
+    if x > 5
+        then putStrLn "x is greater than 5"
+        else putStrLn "x is not greater than 5"

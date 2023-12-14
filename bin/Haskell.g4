@@ -10,13 +10,13 @@ start
 
 declaration
 	returns[ASTNode node]:
-	t1 = gendeclaration SEMICOLON {$node = new DeclarationStm($t1.node);}
-	| funlhs rhs {$node = new FunctionDeclarationStm($funlhs.node, $rhs.node);}
-	| pat rhs {$node = new PatternDeclarationStm($pat.node, $rhs.node);};
+	a=gendeclaration SEMICOLON {$node = new DeclarationStm($a.node);}
+	| b=funlhs c=rhs {$node = new FunctionDeclarationStm($b.node, $c.node);}
+	| d=pat e=rhs {$node = new PatternDeclarationStm($d.node, $e.node);};
 
 gendeclaration
 	returns[ASTNode node]:
-	ID DOUBLE_COLON types {$node = new GeneralDeclaration($ID.text, $types.node);};
+	ID DOUBLE_COLON a=types {$node = new GeneralDeclaration($ID.text, $a.node);};
 
 pat
 	returns[ASTNode node]:
@@ -31,16 +31,16 @@ pats
 
 funlhs
 	returns[ASTNode node]:
-	ID pats {$node = new FunLhs($ID.text, $pats.node);}
+	ID pats {$node = new FunLhsClass($ID.text, $pats.node);}
 	| ID LPAREN pats RPAREN {$node = new ParenFunLhs($ID.text, $pats.node);};
 
 rhs
 	returns[ASTNode node]:
-	ASSIGN expression {$node = new AssignRhs($expression.node);}
-	| ASSIGN list_comprehensions {$node = new ListComprehensionRhs($list_comprehensions.node);}
-	| ASSIGN function_application {$node = new FunctionApplicationRhs($function_application.node);}
-	| RARROW expression {$node = new ArrowRhs($expression.node);}
-	| gdrhs {$node = new GdrhsRhs($gdrhs.node);};
+	ASSIGN a=expression {$node = new AssignRhs($a.node);}
+	| ASSIGN b=list_comprehensions {$node = new ListComprehensionRhs($b.node);}
+	| ASSIGN c=function_application {$node = new FunctionApplicationRhs($c.node);}
+	| RARROW d=expression {$node = new ArrowRhs($d.node);}
+	| e=gdrhs {$node = new GdrhsRhs($e.node);};
 
 expression
 	returns[ASTNode node]:
@@ -52,24 +52,20 @@ expression
 	| literal {$node = $literal.node;}
 	| function_application {$node = new FunctionApplicationExpression($function_application.node);}
 	| list_comprehensions {$node = new ListComprehensionExpression($list_comprehensions.node);}
-	| expression op expression {$node = new OpExpression($expression.node, $op.value, $expression.node);
-		}
-	| MINUS expression {$node = new MinusExpression($expression.node);};
+	| x=expression y=op z=expression {$node = new OpExpression($x.node, $y.value, $z.node);}
+	| MINUS zz=expression {$node = new MinusExpression($zz.node);};
 
 if_statement
 	returns[ASTNode node]:
-	IF expression THEN expression ELSE expression {$node = new IfStatement($expression[0].node, $expression[1].node, $expression[2].node);
-		};
+	IF a=expression THEN b=expression ELSE c=expression {$node = new IfStatement($a.node, $b.node, $c.node);};
 
 case_statement
 	returns[ASTNode node]:
-	CASE expression OF case_alternatives {$node = new CaseStatement($expression.node, $case_alternatives.node);
-		};
+	CASE expression OF case_alternatives {$node = new CaseStatement($expression.node, $case_alternatives.node);};
 
 case_alternatives
 	returns[ASTNode node]:
-	case_alternative case_alternatives {$node = new CaseAlternativesList($case_alternative.node, $case_alternatives.node);
-		}
+	case_alternative case_alternatives {$node = new CaseAlternativesList($case_alternative.node, $case_alternatives.node);}
 	| case_alternative {$node = new SingleCaseAlternative($case_alternative.node);};
 
 case_alternative
@@ -87,12 +83,11 @@ stmts
 
 stmt
 	returns[ASTNode node]:
-	expression {$node = new ExpressionStmt($expression.node);}
-	| pat ARROW expression {$node = new PatArrowExpressionStmt($pat.node, $expression.node);}
-	| pat ASSIGN expression {$node = new PatAssignExpressionStmt($pat.node, $expression.node);}
-	| pat ASSIGN expression DOUBLE_COLON types {$node = new PatAssignTypedExpressionStmt($pat.node, $expression.node, $types.node);
-		}
-	| LET declarations {$node = new LetStmt($declarations.node);};
+	a=expression {$node = new ExpressionStmt($a.node);}
+	| b=pat ARROW c=expression {$node = new PatArrowExpressionStmt($b.node, $c.node);}
+	| d=pat ASSIGN e=expression {$node = new PatAssignExpressionStmt($d.node, $e.node);}
+	| f=pat ASSIGN g=expression DOUBLE_COLON h=types {$node = new PatAssignTypedExpressionStmt($f.node, $g.node, $h.node);};
+//	| LET i=declarations {$node = new LetStmt($i.node);};
 
 gdrhs
 	returns[ASTNode node]:
@@ -105,8 +100,7 @@ gd
 
 exp1
 	returns[ASTNode node]:
-	expression DOUBLE_COLON DOUBLEARROW type {$node = new Exp1TypedExpression($expression.node, $type.node);
-		}
+	expression DOUBLE_COLON DOUBLEARROW type {$node = new Exp1TypedExpression($expression.node, $type.node);}
 	| expression {$node = new Exp1Expression($expression.node);};
 
 types
@@ -130,15 +124,15 @@ atype
 
 let_statement
 	returns[ASTNode node]:
-	LET declarations IN expression {$node = new LetStatement($declarations.node, $expression.node);}
-		;
+	LET a=declarations IN b=expression {};
+//	LET a=declarations IN b=expression {$node = new LetStatement($a.node, $b.node);};
 
 function_application
 	returns[ASTNode node]:
 	ID args {$node = new IdFunctionApplication($ID.text, $args.node);}
-	| ID LPAREN args RPAREN {$node = new IdParenFunctionApplication($ID.text, $args.node);}
-	| q = qvcon args {$node = new QvconFunctionApplication($q.node, $args.node);}
-	| q = qvcon {$node = new QvconFunctionApplicationWithoutArgs($q.node);};
+	| ID LPAREN args RPAREN {$node = new IdParenFunctionApplication($ID.text, $args.node);};
+//	| q = qvcon args {$node = new QvconFunctionApplication($q.node, $args.node);}
+//	| r = qvcon {$node = new QvconFunctionApplicationWithoutArgs($r.node);};
 
 args
 	returns[ASTNode node]:
@@ -194,9 +188,9 @@ gens
 
 gen
 	returns[ASTNode node]:
-	pat ARROW expression {$node = new Gen($pat.node, $expression.node);}
-	| LET d = declarations {$node = new GenLet($d.node);}
-	| expression {$node = new GenExpression($expression.node);};
+	a=pat ARROW b=expression {$node = new GenClass($a.node, $b.node);}
+	| d=expression {$node = new GenExpression($d.node);};
+//	| LET c = declarations {$node = new GenLet($c.node);}
 
 exps
 	returns[ASTNode node]:

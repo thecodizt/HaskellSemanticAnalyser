@@ -1,0 +1,37 @@
+foo = 42
+
+bar x y = x + y
+
+baz (Just x) = x
+baz Nothing = 0
+
+------------------------------------------------------------
+
+loop n = do
+    putStrLn (show n)
+    loop (n-1)
+
+main :: IO ()
+main = loop 5
+
+--------------------------------------------------------------
+
+dayOfWeek day = 
+    case day of
+        Monday -> "It's Monday"
+        Tuesday -> "It's Tuesday"
+        Wednesday -> "It's Wednesday"
+        Thursday -> "It's Thursday"
+        Friday -> "It's Friday"
+        Saturday -> "It's Saturday"
+        Sunday -> "It's Sunday"
+
+main :: IO ()
+main = putStrLn (dayOfWeek Monday)
+
+------------------------------------------------------------------
+
+main = do
+    if x > 5
+        then putStrLn "x is greater than 5"
+        else putStrLn "x is not greater than 5"

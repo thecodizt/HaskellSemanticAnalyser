@@ -4,6 +4,7 @@ public class ParenTypesAtype implements ASTNode {
     private ASTNode lc;
 
     public ParenTypesAtype(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

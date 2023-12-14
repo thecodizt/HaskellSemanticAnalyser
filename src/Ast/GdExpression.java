@@ -4,6 +4,7 @@ public class GdExpression implements ASTNode {
     private ASTNode exp;
 
     public GdExpression(ASTNode exp) {
+        super();
         this.exp = exp;
     }
 

@@ -4,6 +4,7 @@ public class ArrowType implements ASTNode {
     private ASTNode lc;
 
     public ArrowType(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

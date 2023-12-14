@@ -4,6 +4,7 @@ public class FunctionApplicationExpression implements ASTNode {
     private ASTNode lc;
 
     public FunctionApplicationExpression(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

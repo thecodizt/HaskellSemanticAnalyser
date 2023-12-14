@@ -5,6 +5,7 @@ public class ExpsList implements ASTNode {
     private ASTNode a;
 
     public ExpsList(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }

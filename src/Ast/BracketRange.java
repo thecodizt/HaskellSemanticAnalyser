@@ -4,6 +4,7 @@ public class BracketRange implements ASTNode {
     private ASTNode lc;
 
     public BracketRange(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

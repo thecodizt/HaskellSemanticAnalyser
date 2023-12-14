@@ -5,6 +5,7 @@ public class LetStatement implements ASTNode {
     private ASTNode a;
 
     public LetStatement(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }

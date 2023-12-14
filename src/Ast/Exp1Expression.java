@@ -4,6 +4,7 @@ public class Exp1Expression implements ASTNode {
     private ASTNode lc;
 
     public Exp1Expression(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

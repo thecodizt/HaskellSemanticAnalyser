@@ -4,6 +4,7 @@ public class QvconFunctionApplicationWithoutArgs implements ASTNode {
     private ASTNode lc;
 
     public QvconFunctionApplicationWithoutArgs(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

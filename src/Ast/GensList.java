@@ -5,6 +5,7 @@ public class GensList implements ASTNode {
     private ASTNode a;
 
     public GensList(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }

@@ -4,6 +4,7 @@ public class UIdPat implements ASTNode {
     private String ID;
 
     public UIdPat(String ID) {
+        super();
         this.ID = ID;
     }
 

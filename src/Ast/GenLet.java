@@ -4,6 +4,7 @@ public class GenLet implements ASTNode {
     private ASTNode lc;
 
     public GenLet(ASTNode lc) {
+        super();
         this.lc = lc;
     }
 

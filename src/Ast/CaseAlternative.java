@@ -5,6 +5,7 @@ public class CaseAlternative implements ASTNode {
     private ASTNode b;
 
     public CaseAlternative(ASTNode a, ASTNode b) {
+        super();
         this.a = a;
         this.b = b;
     }

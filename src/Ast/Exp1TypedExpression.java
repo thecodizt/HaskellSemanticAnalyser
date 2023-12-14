@@ -5,6 +5,7 @@ public class Exp1TypedExpression implements ASTNode {
     private ASTNode a;
 
     public Exp1TypedExpression(ASTNode c, ASTNode a) {
+        super();
         this.c = c;
         this.a = a;
     }
